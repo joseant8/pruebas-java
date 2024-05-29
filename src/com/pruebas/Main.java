@@ -4,13 +4,17 @@ import com.pruebas.interfaces.interfaces.InterfazFuncional;
 import com.pruebas.interfaces.Operaciones;
 import com.pruebas.tiposGenericos.Generico;
 import com.pruebas.tiposGenericos.GenericoNumber;
+import com.pruebas.tiposGenericos.GenericoNumberLista;
+import com.pruebas.tiposGenericos.HerenciaNumberLista;
 
 public class Main {
 
     public static void main(String[] args) {
 
         //pruebasInterfaces();
-        pruebasGenerico();
+        //pruebasGenerico();
+        pruebasGenericoLista();
+        //pruebasHerenciaLista();
 
     }
 
@@ -36,5 +40,24 @@ public class Main {
         GenericoNumber<Double> genDouble = new GenericoNumber<>(2.0);
         genInteger.printClase();
         genDouble.printClase();
+
+
+    }
+
+    public static void pruebasGenericoLista(){
+        GenericoNumberLista<Integer> lista = new GenericoNumberLista<>();
+        lista.addNumberToLista(1);
+        lista.addNumberToLista(2);
+        lista.printClaseLista();
+    }
+
+    public static void pruebasHerenciaLista(){
+        HerenciaNumberLista lista = new HerenciaNumberLista();
+        lista.addNumberToLista(1);
+        lista.addNumberToLista(2);
+        lista.addNumberToLista(3.0);
+        lista.printClaseLista();
+
+        lista.printClase(lista.getPrimerElemento());
     }
 }
